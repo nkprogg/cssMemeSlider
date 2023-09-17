@@ -132,14 +132,15 @@ body {
 
 .text {
   position: absolute;
-  width: 100;
+  width: 100%;
   bottom: -10%;
   left: 0;
   opacity: 0;
   color: white;
   font-size: 1.5em;
-  transition: 3s;
+  transition: opacity 3s;
 }
+
 .dots {
   width: 100%;
   position: absolute;
@@ -154,7 +155,6 @@ body {
   border-radius: 50%;
   margin: 0 0.3em;
   background-color: rgb(80, 80, 187);
-  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -167,9 +167,6 @@ body {
   background-color: black;
   border: 0.15em solid white;
   transition: all 0.1s ease;
-}
-.dots label:checked:hover {
-  border: 0.15em solid white;
 }
 
 #radio-1:checked ~ #slide-1,
@@ -200,4 +197,32 @@ body {
   background-color: black;
   border: 0.15em solid rgb(80, 80, 187);
   transition: all 0.1s ease;
+}
+
+#radio-1:checked:hover ~ .dots #label-1,
+#radio-2:checked:hover ~ .dots #label-2,
+#radio-3:checked:hover ~ .dots #label-3,
+#radio-4:checked:hover ~ .dots #label-4 {
+  border: 0.15em solid white;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 47.9375em) {
+  .text {
+    position: absolute;
+    width: 100%;
+    bottom: -25%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 3s;
+  }
+
+  .dots {
+    width: 100%;
+    position: absolute;
+    bottom: -13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
